@@ -1,161 +1,334 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UMMADISETTY SWARNALATHA - Resume</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f0f2f5;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 1000px;
-      background: #ffffff;
-      margin: 40px auto;
-      padding: 40px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
-    }
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      border-bottom: 3px solid #0077b6;
-      padding-bottom: 20px;
-      margin-bottom: 30px;
-    }
-    .header-text {
-      flex: 1;
-    }
-    .name {
-      font-size: 32px;
-      font-weight: 700;
-      color: #0077b6;
-      text-transform: uppercase;
-    }
-    .contact-info {
-      margin-top: 12px;
-      font-size: 15px;
-      color: #333;
-    }
-    .photo {
-      width: 130px;
-      height: 160px;
-      object-fit: cover;
-      border: 3px solid #0077b6;
-      border-radius: 10px;
-    }
-    .section {
-      margin-bottom: 35px;
-    }
-    .section-title {
-      font-size: 18px;
-      font-weight: bold;
-      color: #0077b6;
-      margin-bottom: 12px;
-      border-bottom: 2px solid #cce3f3;
-      padding-bottom: 5px;
-      text-transform: uppercase;
-    }
-    ul {
-      padding-left: 20px;
-      margin: 0;
-    }
-    li {
-      margin-bottom: 8px;
-      color: #333;
-    }
-    .bold {
-      font-weight: bold;
-    }
-    a {
-      color: #0077b6;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    p {
-      color: #444;
-    }
-  </style>
+<title>SWARNALATHA - Resume</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    background-color: #f0f2f5;
+  }
+  .a4-sheet {
+    width: 210mm;
+    min-height: 297mm;
+    background-color: #fff;
+    margin: 20px 0;
+    padding: 15mm 20mm;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    padding-bottom: 25px;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #444;
+    position: relative;
+    background-color: #6c757d; /* Header gray */
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .header-info {
+    flex-grow: 1;
+    padding-right: 100px;
+  }
+  .header img {
+    width: 85px;
+    height: 105px;
+    border: 1px solid #ddd;
+    background-color: #e9ecef;
+    object-fit: cover;
+    border-radius: 5px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .header-info h1 {
+    margin: 0;
+    margin-bottom: 25px;
+    font-size: 2.5em;
+    color: #fff;
+    letter-spacing: 1px;
+    display: inline-block;
+  }
+  .header-info p {
+    margin: 2px 0;
+    font-size: 0.9em;
+    color: #555;
+  }
+  .header-info a {
+    color: #666;
+    text-decoration: none;
+  }
+  .header-info a:hover {
+    text-decoration: underline;
+  }
+  .main-content {
+    display: flex;
+    flex-grow: 1;
+  }
+  .left-column {
+    flex: 0.5;
+    padding-right: 10mm;
+    border-right: 1px solid #eee;
+  }
+  .right-column {
+    flex: 0.5;
+    padding-left: 10mm;
+  }
+  .section {
+    margin-bottom: 15px;
+  }
+  .section h2 {
+    background-color: #e2e4e6; /* Adjusted to a lighter tint of header gray to suit better */
+    padding: 6px 12px;
+    border-left: 4px solid #6c757d; /* H2 border matches header gray */
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .section ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  .section ul li {
+    margin-bottom: 5px;
+  }
+  .contact-details-list {
+    margin-bottom: 10px;
+  }
+  .contact-details-list p {
+    margin: 2px 0;
+    font-size: 0.9em;
+    color: #555;
+  }
+  .contact-details-list a {
+    color: #666;
+    text-decoration: none;
+  }
+  .contact-details-list a:hover {
+    text-decoration: underline;
+  }
+  /* Style for symbols */
+  .contact-details-list span.symbol {
+    margin-right: 5px;
+    font-size: 1.1em;
+  }
+
+  .education-item, .project-item, .internship-item, .certification-item, .extracurricular-item {
+    margin-bottom: 10px;
+  }
+  .education-item h3, .project-item h3, .internship-item h3, .certification-item h3, .extracurricular-item h3 {
+    margin: 0;
+    font-size: 1.05em;
+    color: #333;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 3px;
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+  .education-item p, .internship-item p {
+    margin: 0;
+    font-size: 0.9em; /* Increased font size for details */
+    color: #666;
+  }
+  .skills-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+  .skills-list h3 {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 2px;
+    margin-top: 5px;
+  }
+  .skills-list ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    font-size: 0.85em;
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .skills-list ul li {
+    margin-bottom: 2px;
+  }
+  .certification-item {
+    margin-bottom: 15px;
+  }
+  .certification-item h3 {
+    margin-bottom: 5px;
+  }
+  .certification-item ul {
+    margin-left: 20px;
+    margin-top: 5px;
+    list-style-type: circle;
+  }
+  .certification-item ul li {
+      margin-bottom: 5px;
+  }
+  .extracurricular-item {
+      list-style-type: disc;
+      margin-left: 20px;
+  }
+</style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <div class="header-text">
-        <div class="name">UMMADISETTY SWARNALATHA</div>
-        <div class="contact-info">
-          Phone: 9704917031<br>
-          Email: swarnal879@gmail.com<br>
-          Location: Vijayawada<br>
-          LinkedIn: <a href="https://www.linkedin.com/in/swarna-latha-17b04125b">linkedin.com/in/swarna-latha-17b04125b</a>
+
+<div class="a4-sheet">
+  <div class="header">
+    <div class="header-info">
+      <h1>SWARNALATHA</h1>
+    </div>
+    <img src="photo.jpg" alt="SWARNALATHA">
+  </div>
+
+  <div class="main-content">
+    <div class="left-column">
+      <div class="section">
+        <h2>CONTACT DETAILS</h2>
+        <div class="contact-details-list">
+          <p><span class="symbol">&#9742;</span> +91 9704917031</p>
+          <p><span class="symbol">&#9993;</span> swarnal879@gmail.com</p>
+          <p><span class="symbol">&#128205;</span> VIJAYAWADA</p>
+          <p><span class="symbol">&#128279;</span> <a href="www.linkedin.com/in/swarna-latha-17b04125b" target="_blank">www.linkedin.com/in/swarna-latha-17b04125b</a></p>
         </div>
       </div>
-      <img class="photo" src="photo.jpg" alt="Swarnalatha Photo">
+
+      <div class="section">
+        <h2>EDUCATION</h2>
+        <div class="education-item">
+          <h3>B.TECH(ECE)</h3>
+          <p>Prasad V Potluri Siddhartha institute of technology.</p>
+          <p>2023-2026</p>
+        </div>
+        <div class="education-item">
+          <h3>Diploma(ECE) -8.79</h3>
+          <p>DJR college of Engineering.</p>
+          <p>Board-APSBTET</p>
+          <p>2019-2022</p>
+        </div>
+        <div class="education-item">
+          <h3>Secondary School -82.12%</h3>
+          <p>KBCZPHS</p>
+          <p>Board-SSC</p>
+          <p>2018-2019</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>SKILLS</h2>
+        <div class="skills-list">
+          <div>
+            <h3>Electronics:</h3>
+            <ul>
+              <li>Circuit design,</li>
+              <li>PCB design, IoT and DLD.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Programming languages:</h3>
+            <ul>
+              <li>C, Java, Verilog</li>
+              <li>and VHDL.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Tools:</h3>
+            <ul>
+              <li>MATLAB, Multisim</li>
+              <li>and VIVADO.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>EXTRA CURRICULAR ACTIVITIES</h2>
+        <h3>Participations -</h3>
+        <ul>
+          <li class="extracurricular-item">Circuitrix, Technical quiz, in SITAR 2K24 at PVPSIT.</li>
+          <li class="extracurricular-item">Technical quiz in sunrise 2k24 carried out by NRI.</li>
+          <li class="extracurricular-item">Secured second prize in Essay writing executed by TATA building India.</li>
+        </ul>
+      </div>
     </div>
 
-    <div class="section">
-      <div class="section-title">Career Objective</div>
-      <p>To work in an organization which provides me with ample opportunities to enhance my skills and knowledge along with contributing to the growth of the organization.</p>
-    </div>
+    <div class="right-column">
+      <div class="section">
+        <h2>CAREER OBJECTIVE</h2>
+        <p>To work in an organization which provides me with ample opportunities to enhance my skills and knowledge along with contributing to the growth of the organization.</p>
+      </div>
 
-    <div class="section">
-      <div class="section-title">Skills</div>
-      <ul>
-        <li>Electronics: Circuit Design, PCB Design, IoT, DLD</li>
-        <li>Programming: C, Java, Verilog, VHDL</li>
-        <li>Tools: MATLAB, Multisim, VIVADO</li>
-      </ul>
-    </div>
+      <div class="section">
+        <h2>INTERNSHIP</h2>
+        <div class="internship-item">
+          <h3>Foxconn India Pvt Ltd - Mobile Assembly Design Intern</h3>
+          <ul>
+            <li>Gained hands-on experience in mobile assembly processes of iPhone 13 at the key manufacturing stage</li>
+            <li>Improved knowledge of production workflows and quality control.</li>
+          </ul>
+        </div>
+        <div class="internship-item">
+          <h3>Sense Semiconductors & IT solutions-Intern</h3>
+          <ul>
+            <li>Internship on EMBEDDED SYSTEMS.</li>
+            <li>Gained hands-on experience about ARM processors.</li>
+          </ul>
+        </div>
+      </div>
 
-    <div class="section">
-      <div class="section-title">Education</div>
-      <ul>
-        <li><span class="bold">B.Tech (ECE):</span> Prasad V Potluri Siddhartha Institute of Technology (2023-2026) - 8.79 CGPA</li>
-        <li><span class="bold">Diploma (ECE):</span> DJR College of Engineering (2019-2022) - 82.12%</li>
-        <li><span class="bold">SSC:</span> KBCZPHS (2018-2019) - 9.5 GPA</li>
-      </ul>
-    </div>
+      <div class="section">
+        <h2>PROJECTS</h2>
+        <ul>
+          <li class="project-item">Food grain moisture sensor.</li>
+          <li class="project-item">Dual purpose alert and repellent system (ongoing).</li>
+        </ul>
+      </div>
 
-    <div class="section">
-      <div class="section-title">Certifications</div>
-      <ul>
-        <li><span class="bold">NPTEL IIT Kharagpur:</span> System Design through Verilog - 72%</li>
-        <li><span class="bold">Spoken Tutorials:</span> Arduino - 87.50%, Python Basics - 90.00%</li>
-        <li><span class="bold">Infosys:</span> Basics of Python, IoT, Java</li>
-        <li><span class="bold">Cisco:</span> Programming Essentials in C, IoT</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <div class="section-title">Projects</div>
-      <ul>
-        <li>Food Grain Moisture Sensor</li>
-        <li>Dual Purpose Alert and Repellent System (ongoing)</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <div class="section-title">Internship</div>
-      <ul>
-        <li><span class="bold">Foxconn India Pvt Ltd – Mobile Assembly Design Intern:</span> Experience in iPhone 13 assembly, production workflow, and quality control.</li>
-        <li><span class="bold">Sense Semiconductors & IT Solutions – Intern</span></li>
-        <li><span class="bold">Embedded Systems Internship:</span> Hands-on experience with ARM processors.</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <div class="section-title">Extra Curricular Activities</div>
-      <ul>
-        <li>Circuitrix, Technical Quiz - SITAR 2K24 at PVPSIT</li>
-        <li>Technical Quiz - Sunrise 2K24 at NRI</li>
-        <li>Essay Writing - 2nd Prize by TATA Building India</li>
-      </ul>
+      <div class="section">
+        <h2>CERTIFICATIONS</h2>
+        <ul>
+          <li class="certification-item">NPTEL, IIT Kharagpur certification on System design through Verilog-72%</li>
+          <li class="certification-item">Spoken Tutorial Certifications-
+            <ul>
+              <li>Arduino-87.50%</li>
+              <li>Python Basics -90.00%</li>
+            </ul>
+          </li>
+          <li class="certification-item">Infosys certifications-
+            <ul>
+              <li>Basic of Python</li>
+              <li>IOT</li>
+              <li>JAVA</li>
+            </ul>
+          </li>
+          <li class="certification-item">Cisco certifications-
+            <ul>
+              <li>Programming Essentials in C</li>
+              <li>IOT</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
+</div>
+
 </body>
 </html>
